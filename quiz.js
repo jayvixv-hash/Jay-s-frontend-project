@@ -1,4 +1,3 @@
-// Minimal, easy-to-read quiz script
 let questions = [];
 let current = 0;
 let answers = [];
@@ -61,3 +60,4 @@ async function submitQuiz() {
 }
 
 loadQuiz();
+
