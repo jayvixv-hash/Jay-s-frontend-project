@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en"><!--http://localhost:3000/quiz.html--><!--npm start-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light p-5">
+    <div class="container col-md-6">
+        <div id="quizPage">
+            <div class="card shadow p-4">
+                <h3 id="question" class="mb-3"></h3>
+                <div id="options"></div>
+                <div class="mt-4">
+                    <button id="prevBtn" class="btn btn-secondary" onclick="prevQuestion()">Back</button>
+                    <button id="nextBtn" class="btn btn-primary" onclick="nextQuestion()">Next</button>
+                    <button id="submitBtn" class="btn btn-success" onclick="submitQuiz()">Submit</button>
+                </div>
+                <p class="mt-3 text-muted"><span id="count">1</span> of <span id="total">0</span></p>
+            </div>
+        </div>
+        
+        <div id="resultPage" style="display:none;">
+            <div class="card shadow p-4 text-center">
+                <h2>Your Score: <span id="score" class="text-success"></span>/<span id="total2"></span></h2>
+                <button class="btn btn-primary mt-3" onclick="location.reload()">Retake</button>
+            </div>
+        </div>
+    </div>
+    <script src="quiz.js"></script>
+</body>
+</html>
