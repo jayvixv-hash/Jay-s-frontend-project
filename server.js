@@ -5,11 +5,9 @@ require('dotenv').config();
 
 const app = express();
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 
-// Add security headers
 app.use((req, res, next) => {
     res.header('Content-Security-Policy', "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https:; connect-src 'self' http://localhost:* https:; font-src 'self' https:");
     res.header('X-Content-Type-Options', 'nosniff');
@@ -18,7 +16,6 @@ app.use((req, res, next) => {
 
 app.use(express.static(path.join(__dirname)));
 
-// Routes
 app.get('/api/quiz', (req, res) => {
     try {
         const fs = require('fs');
@@ -55,3 +52,4 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
+
